@@ -11,6 +11,9 @@
 
 <title>Dr. Keys | 24/7 Locksmith — Aventura, Hollywood, North Miami, Sunny Isles Beach FL</title>
 
+<!-- Favicon (inline SVG as data URI — no external file needed) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b1f3a'/><text y='.9em' font-size='70' x='12'>🔑</text></svg>">
+
 <!-- Canonical URL -->
 <link rel="canonical" href="https://locksmitharea.com/">
 
@@ -43,7 +46,6 @@
   "image": "https://locksmitharea.com/og-image.jpg",
   "url": "https://locksmitharea.com",
   "telephone": "+17868866688",
-  "email": "info@locksmitharea.com",
   "priceRange": "$$",
   "openingHours": "Mo-Su 00:00-23:59",
   "address": {
@@ -462,6 +464,18 @@ textarea {
   min-height: 120px;
 }
 
+/* Honeypot field — hidden from real users */
+.hp-field {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 button[type="submit"] {
   width: 100%;
   padding: 16px;
@@ -766,9 +780,15 @@ footer a:hover {
 <section class="contact-section">
   <h2>Request Service</h2>
   <div class="form-wrapper">
-    <form action="https://formsubmit.co/investmentpro99@gmail.com" method="POST">
+    <!--
+      Email is NOT hardcoded here.
+      FormSubmit destination is set via the data attribute and assembled by JS at runtime,
+      so email-harvesting bots scanning the HTML source won't find it.
+    -->
+    <form id="contactForm" data-fs-user="investmentpro99" data-fs-domain="gmail.com">
+      <!-- Honeypot: real users never fill this; bots usually do → submission blocked -->
+      <input class="hp-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="_subject" value="New service request from Dr. Keys website">
-      <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
       <input type="tel" name="phone" placeholder="Phone Number" required aria-label="Phone Number">
       <textarea name="message" placeholder="Describe your issue" required aria-label="Describe your issue"></textarea>
@@ -835,6 +855,31 @@ footer a:hover {
   <a class="call-btn" href="tel:+17868866688" aria-label="Call Dr. Keys Locksmith">📞 Call</a>
   <a class="text-btn" href="sms:+17868866688" aria-label="Text Dr. Keys Locksmith">💬 Text</a>
 </nav>
+
+<script>
+  // Assemble FormSubmit action URL at runtime from data attributes.
+  // The actual email address is never present as plain text in the HTML source,
+  // so email-harvesting bots won't find it.
+  (function () {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+
+    var user   = form.getAttribute('data-fs-user');
+    var domain = form.getAttribute('data-fs-domain');
+    var email  = user + '@' + domain;
+
+    form.action  = 'https://formsubmit.co/' + email;
+    form.method  = 'POST';
+
+    // Block submission if honeypot field is filled (bot detected)
+    form.addEventListener('submit', function (e) {
+      var honey = form.querySelector('input[name="_honey"]');
+      if (honey && honey.value !== '') {
+        e.preventDefault(); // silently block the bot
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
