@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dr. Keys | 24/7 Locksmith Florida — Miami, Fort Lauderdale, Boca Raton</title>
+<title>Dr. Keys | 24/7 Locksmith — Aventura, Hollywood, North Miami, Sunny Isles Beach FL</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Dr. Keys — 24/7 emergency locksmith in South Florida. Car lockout, car key replacement, house lockout, rekey & ignition repair. Fast 20–30 min arrival. Call 786-88-666-88.">
-<meta name="keywords" content="locksmith florida, 24/7 locksmith miami, car lockout miami, car key replacement, emergency locksmith fort lauderdale, locksmith boca raton, locksmith hollywood fl">
+<meta name="description" content="Dr. Keys — 24/7 emergency locksmith in Aventura, Hollywood, North Miami & Sunny Isles Beach FL. Car lockout, car key replacement, house lockout & rekey. Fast 20–30 min arrival. Call 786-88-666-88.">
+<meta name="keywords" content="locksmith aventura fl, locksmith hollywood fl, locksmith north miami, locksmith sunny isles beach, 24/7 locksmith florida, car lockout miami, car key replacement florida">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Dr. Keys Locksmith">
 
@@ -135,6 +135,7 @@ body {
   color: white;
   text-align: center;
   padding: 90px 20px;
+  margin-bottom: 40px;
 }
 
 .hero h1 {
@@ -176,6 +177,7 @@ section {
   max-width: 1100px;
   margin: auto;
   padding: 60px 20px;
+  margin-bottom: 40px;
 }
 
 h2 {
@@ -183,25 +185,56 @@ h2 {
   margin-bottom: 40px;
   font-size: 32px;
 }
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-align-items:stretch;
+
+h3 {
+  font-size: 20px;
+  color: #0b1f3a;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.card{
+/* SERVICES GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 20px;
+}
 
+/* LOCATIONS GRID */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.card {
   background: white;
-  padding: 30px;
+  padding: 28px;
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   text-align: center;
   text-decoration: none;
-  color: #222;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   transition: transform 0.3s, box-shadow 0.3s;
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card-service {
+  color: #0b1f3a;
+  border-bottom: 4px solid #ffb400;
+}
+
+.card-location {
+  color: #0b1f3a;
+  border-bottom: 4px solid #0b1f3a;
+  background: white;
 }
 
 .card:hover {
@@ -209,11 +242,56 @@ align-items:stretch;
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
+/* SERVICES SECTION */
+.services-section {
+  background: #0b1f3a;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  border-top: 5px solid #ffb400;
+  border-bottom: 5px solid #ffb400;
+}
+
+.services-section h2 {
+  color: white;
+  margin-bottom: 12px;
+}
+
+.services-section .subtitle {
+  color: #ffb400;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 35px;
+  font-weight: 600;
+}
+
+/* LOCATIONS SECTION */
+.locations-section {
+  background: #fff8e7;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  border-top: 5px solid #0b1f3a;
+  border-bottom: 5px solid #0b1f3a;
+}
+
+.locations-section h2 {
+  color: #0b1f3a;
+  margin-bottom: 12px;
+}
+
+.locations-section .subtitle {
+  color: #0b1f3a;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 35px;
+  font-weight: 600;
+}
+
 /* AREAS */
 .areas {
   text-align: center;
   padding: 60px 20px;
   background: #ffffff;
+  margin-bottom: 40px;
 }
 
 .cities {
@@ -254,6 +332,16 @@ align-items:stretch;
   color: white;
   border-radius: 15px;
   padding: 40px;
+}
+
+.why h2 {
+  color: white;
+}
+
+.why p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 2;
 }
 
 /* CONTACT FORM */
@@ -339,6 +427,15 @@ footer a {
 }
 
 /* RESPONSIVE */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 48px;
@@ -348,6 +445,12 @@ footer a {
   }
   h2 {
     font-size: 26px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .locations-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -365,21 +468,33 @@ footer a {
   <a class="btn" href="sms:+17868866688">💬 Text Us</a>
 </header>
 
-<!-- SERVICES -->
-<section>
-  <h2>Our Services</h2>
-  <div class="services">
-    <a class="card" href="tel:+17868866688" aria-label="House Lockout Service">🔑 House Lockout</a>
-    <a class="card" href="tel:+17868866688" aria-label="Car Lockout Service">🚗 Car Lockout</a>
-    <a class="card" href="tel:+17868866688" aria-label="Car Key Replacement">🔑 Car Key Replacement</a>
-    <a class="card" href="tel:+17868866688" aria-label="Rekey Service">🔐 Rekey Service</a>
-    <a class="card" href="tel:+17868866688" aria-label="Ignition Repair">⚙️ Ignition Repair</a>
-    <a class="card" href="tel:+17868866688" aria-label="Emergency Locksmith">🚨 Emergency Locksmith</a>
-    <a class="card" href="/car-locksmith-fort-lauderdale.html" aria-label="Car Locksmith Fort Lauderdale">🚗 Car Locksmith Fort Lauderdale</a>
-    <a class="card" href="/locksmith-hollywood-fl.html" aria-label="Locksmith Hollywood FL">🔐 Locksmith Hollywood FL</a>
-    <a class="card" href="/locksmith-pompano-beach.html" aria-label="Locksmith Pompano Beach">🔐 Locksmith Pompano Beach</a>
-    <a class="card" href="/locksmith-boca-raton.html" aria-label="Locksmith Boca Raton">🔐 Locksmith Boca Raton</a>
-    <a class="card" href="/locksmith-davie-fl.html" aria-label="Locksmith Davie FL">🔐 Locksmith Davie FL</a>
+<!-- SERVICES SECTION -->
+<section class="services-section">
+  <div style="max-width:1100px;margin:auto;">
+    <h2>Our Services</h2>
+    <p class="subtitle">Available 24/7 — Call us anytime</p>
+    <div class="services-grid">
+      <a class="card card-service" href="tel:+17868866688" aria-label="House Lockout Service">🔑<br>House Lockout</a>
+      <a class="card card-service" href="tel:+17868866688" aria-label="Car Lockout Service">🚗<br>Car Lockout</a>
+      <a class="card card-service" href="tel:+17868866688" aria-label="Car Key Replacement">🔑<br>Car Key Replacement</a>
+      <a class="card card-service" href="tel:+17868866688" aria-label="Rekey Service">🔐<br>Rekey Service</a>
+      <a class="card card-service" href="tel:+17868866688" aria-label="Ignition Repair">⚙️<br>Ignition Repair</a>
+      <a class="card card-service" href="tel:+17868866688" aria-label="Emergency Locksmith">🚨<br>Emergency Locksmith</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS SECTION -->
+<section class="locations-section">
+  <div style="max-width:1100px;margin:auto;">
+    <h2>Service Locations</h2>
+    <p class="subtitle">Click your area for local locksmith info</p>
+    <div class="locations-grid">
+      <a class="card card-location" href="/locksmith-aventura.html" aria-label="Locksmith Aventura FL">📍<br>Aventura FL</a>
+      <a class="card card-location" href="/locksmith-hollywood-fl.html" aria-label="Locksmith Hollywood FL">📍<br>Hollywood FL</a>
+      <a class="card card-location" href="/locksmith-north-miami.html" aria-label="Locksmith North Miami FL">📍<br>North Miami FL</a>
+      <a class="card card-location" href="/locksmith-sunny-isles-beach.html" aria-label="Locksmith Sunny Isles Beach FL">📍<br>Sunny Isles Beach FL</a>
+    </div>
   </div>
 </section>
 
@@ -387,11 +502,9 @@ footer a {
 <section class="areas">
   <h2>Service Areas</h2>
   <p class="cities">
-    South Miami • Coral Gables • Miami • Miami Beach • North Miami •
-    Aventura • Sunny Isles Beach • Hollywood • Hallandale Beach •
-    Pembroke Pines • Miramar • Davie • Plantation • Fort Lauderdale •
-    Oakland Park • Lauderdale Lakes • Pompano Beach • Deerfield Beach •
-    Boca Raton
+    Aventura • Sunny Isles Beach • North Miami • North Miami Beach •
+    Hollywood • Hallandale Beach • Pembroke Pines • Miramar •
+    Miami Beach • Bal Harbour • Surfside • Dania Beach
   </p>
 </section>
 
@@ -399,7 +512,7 @@ footer a {
 <section>
   <div class="why">
     <h2>Why Choose Dr. Keys?</h2>
-    <p style="text-align:center;font-size:18px;line-height:2;">
+    <p>
       ✔ Fast arrival anywhere in South Florida<br>
       ✔ Licensed &amp; professional locksmith<br>
       ✔ Affordable pricing — free estimate before arrival<br>
