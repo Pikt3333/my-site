@@ -87,6 +87,8 @@
       })
         .then(function (res) {
           if (res.ok || res.status === 200) {
+            // Fire conversion on successful form submit
+            fireConversion();
             showMsg('success', '✔ Request sent! We\'ll call you back shortly.');
             form.reset();
           } else {
@@ -158,6 +160,28 @@
     if (href === currentPath) {
       a.setAttribute('aria-current', 'page');
     }
+  });
+
+  /* ----------------------------------------------------------
+     6. GOOGLE ADS CONVERSION TRACKING
+     - Fires on: Call buttons, SMS/Text buttons, Form submit
+  ---------------------------------------------------------- */
+  function fireConversion() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18096947401/YozMClO2lp4cEMmBprVD'
+      });
+    }
+  }
+
+  // Track all Call buttons
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+    el.addEventListener('click', fireConversion);
+  });
+
+  // Track all Text/SMS buttons
+  document.querySelectorAll('a[href^="sms:"]').forEach(function (el) {
+    el.addEventListener('click', fireConversion);
   });
 
 })();
