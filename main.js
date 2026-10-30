@@ -6,19 +6,15 @@
 
   /* ----------------------------------------------------------
      1. FORM HANDLING
-     - Email never in HTML; assembled at submit time only
+     - Inbox address hidden behind a FormSubmit alias
      - Honeypot + timing check (bot protection)
      - Fetch-based submit (no page redirect)
   ---------------------------------------------------------- */
   var FORM_LOAD_TIME = Date.now();
 
-  // Email parts — obfuscated, assembled only on submit
-  var _u = 'investmentpro99';
-  var _d = 'gmail';
-  var _t = 'com';
-
+  // FormSubmit alias (hides the real inbox address from the page source)
   function getEndpoint() {
-    return 'https://formsubmit.co/ajax/' + _u + '\u0040' + _d + '.' + _t;
+    return 'https://formsubmit.co/ajax/3a7c28dc819516af9ef668967a29e771';
   }
 
   var form    = document.getElementById('drkeys-form');
