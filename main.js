@@ -18,7 +18,7 @@
   var _t = 'com';
 
   function getEndpoint() {
-    return 'https://formsubmit.co/' + _u + '\u0040' + _d + '.' + _t;
+    return 'https://formsubmit.co/ajax/' + _u + '\u0040' + _d + '.' + _t;
   }
 
   var form    = document.getElementById('drkeys-form');
