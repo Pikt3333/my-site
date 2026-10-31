@@ -8,6 +8,7 @@
   --gold:   #ffb400;
   --gold2:  #e6a200;
   --bg:     #f4f6f9;
+  --cream:  #fff8e7;
   --white:  #ffffff;
   --text:   #222222;
   --muted:  #555555;
@@ -98,7 +99,7 @@ p:last-child { margin-bottom: 0; }
 .nav-logo {
   color: var(--gold);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.65rem;
   text-decoration: none;
   letter-spacing: -0.3px;
   white-space: nowrap;
@@ -223,12 +224,11 @@ p:last-child { margin-bottom: 0; }
 
 /* ── SERVICES SECTION ── */
 .services-section {
-  background: var(--navy);
+  background: var(--cream);
   padding: 72px 24px;
-  border-top: 4px solid var(--gold);
-  border-bottom: 4px solid var(--gold);
 }
-.services-section h2 { color: var(--white); text-align: center; }
+.services-section h2 { color: var(--navy); text-align: center; }
+.services-section .section-sub { color: var(--navy2); }
 .section-sub {
   text-align: center;
   color: var(--gold);
@@ -269,10 +269,8 @@ p:last-child { margin-bottom: 0; }
 
 /* ── LOCATIONS SECTION ── */
 .locations-section {
-  background: #fff8e7;
+  background: var(--white);
   padding: 72px 24px;
-  border-top: 4px solid var(--navy);
-  border-bottom: 4px solid var(--navy);
 }
 .locations-section h2 { text-align: center; }
 .locations-grid {
@@ -337,6 +335,14 @@ p:last-child { margin-bottom: 0; }
 }
 .why-box h2 { color: var(--white); text-align: center; margin-bottom: 2rem; }
 .why-box p { color: rgba(255,255,255,0.86); }
+.about-section { padding: 0 24px 64px; background: var(--white); }
+.about-section .why-box {
+  background: var(--cream);
+  border-left: 5px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(11,31,58,0.08);
+}
+.about-section .why-box h2 { color: var(--navy); }
+.about-section .why-box p { color: #4a5563; }
 .why-list { display: flex; flex-direction: column; gap: 14px; }
 .why-list-item {
   display: flex;
@@ -598,6 +604,7 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.9;
 }
 .site-footer strong { color: var(--white); }
+.site-footer p { color: rgba(255,255,255,0.78); }
 .site-footer a { color: var(--gold); text-decoration: none; }
 .site-footer a:hover { color: var(--white); }
 .footer-copy { margin-top: 20px; opacity: 0.45; font-size: 0.75rem; }
@@ -643,6 +650,14 @@ p:last-child { margin-bottom: 0; }
 .skip-link:focus { top: 0; }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 1240px) {
+  .nav-logo { font-size: 1.4rem; }
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 7px 8px; font-size: 0.76rem; }
+}
+@media (max-width: 1060px) {
+  .sitenav .nav-links a:not(.nav-cta) { display: none; }
+}
 @media (max-width: 1024px) {
   .services-grid  { grid-template-columns: repeat(2, 1fr); }
   .locations-grid .location-card { flex-basis: calc((100% - 20px) / 2); }
