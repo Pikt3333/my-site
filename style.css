@@ -340,13 +340,14 @@ p:last-child { margin-bottom: 0; }
 .area-map .m-land   { fill: #f4f1ea; }
 .area-map .m-sea    { fill: #e2edf6; }
 .area-map .m-city   { fill: #e6e9ee; stroke: #ffffff; stroke-width: 1.2; }
-.area-map .m-served { fill: var(--navy); stroke: var(--gold); stroke-width: 1.6; transition: fill .25s ease; }
-.area-map .m-link:hover .m-served, .area-map .m-link:focus-visible .m-served { fill: var(--gold); stroke: var(--navy); }
+.area-map .m-served { fill: var(--gold); stroke: var(--navy); stroke-width: 1.4; transition: fill .25s ease; }
+.area-map .m-link:hover .m-served, .area-map .m-link:focus-visible .m-served { fill: var(--navy); stroke: var(--gold); }
 .area-map .m-link:focus-visible { outline: none; }
 .area-map text { font-family: 'Poppins', sans-serif; font-weight: 700; pointer-events: none; }
-.area-map .m-label-in  { fill: #ffffff; font-size: 11.5px; }
+.area-map .m-label-in  { fill: var(--navy); font-size: 11.5px; transition: fill .25s ease; }
+.area-map .m-link:hover .m-label-in, .area-map .m-link:focus-visible .m-label-in { fill: #ffffff; }
 .area-map .m-label-out { fill: var(--navy); font-size: 11.5px; }
-.area-map .m-dot   { fill: var(--gold); stroke: var(--navy); stroke-width: 1; }
+.area-map .m-dot   { fill: var(--navy); stroke: #ffffff; stroke-width: 1; }
 .area-map .m-ocean { fill: #9db5c9; font-size: 10px; letter-spacing: 3px; font-weight: 600; }
 .area-map .m-north path { fill: var(--navy); }
 .area-map .m-north text { fill: var(--navy); font-size: 10px; }
