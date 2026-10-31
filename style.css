@@ -318,6 +318,43 @@ p:last-child { margin-bottom: 0; }
 }
 .location-icon { font-size: 2.2rem; line-height: 1; }
 
+/* ── SERVICE AREA MAP ── */
+.locations-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 44px;
+  max-width: 980px;
+  margin: 0 auto;
+  align-items: center;
+}
+.locations-layout .locations-grid { max-width: none; }
+.locations-layout .locations-grid .location-card { flex-basis: calc((100% - 20px) / 2); }
+.map-wrap {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(11,31,58,0.10);
+  border: 1px solid #e8ecf1;
+}
+.area-map { display: block; width: 100%; height: auto; }
+.area-map .m-land   { fill: #f4f1ea; }
+.area-map .m-sea    { fill: #e2edf6; }
+.area-map .m-city   { fill: #e6e9ee; stroke: #ffffff; stroke-width: 1.2; }
+.area-map .m-served { fill: var(--navy); stroke: var(--gold); stroke-width: 1.6; transition: fill .25s ease; }
+.area-map .m-link:hover .m-served, .area-map .m-link:focus-visible .m-served { fill: var(--gold); stroke: var(--navy); }
+.area-map .m-link:focus-visible { outline: none; }
+.area-map text { font-family: 'Poppins', sans-serif; font-weight: 700; pointer-events: none; }
+.area-map .m-label-in  { fill: #ffffff; font-size: 11.5px; }
+.area-map .m-label-out { fill: var(--navy); font-size: 11.5px; }
+.area-map .m-dot   { fill: var(--gold); stroke: var(--navy); stroke-width: 1; }
+.area-map .m-ocean { fill: #9db5c9; font-size: 10px; letter-spacing: 3px; font-weight: 600; }
+.area-map .m-north path { fill: var(--navy); }
+.area-map .m-north text { fill: var(--navy); font-size: 10px; }
+@media (max-width: 860px) {
+  .locations-layout { grid-template-columns: 1fr; gap: 28px; }
+  .map-wrap { max-width: 260px; margin: 0 auto; }
+}
+
 /* ── AREAS ── */
 .areas-section {
   background: var(--white);
