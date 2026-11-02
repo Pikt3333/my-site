@@ -732,4 +732,28 @@ p:last-child { margin-bottom: 0; }
   .mobile-bar a   { padding: 14px; font-size: 0.9rem; }
   h2 { font-size: 1.4rem; }
 }
-</style>
+
+/* ── HERO WITH BANNER IMAGE ── */
+.hero.hero--banner {
+  background: #0a0a0a;
+  padding: 0 0 48px;
+  border-bottom: 3px solid var(--gold);
+}
+.hero.hero--banner::before { display: none; }
+.hero-banner {
+  display: block;
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+  margin: 0 auto 28px;
+}
+.hero.hero--banner .hero-sub,
+.hero.hero--banner .hero-arrival,
+.hero.hero--banner .btn-group { margin-left: 24px; margin-right: 24px; }
+.hero.hero--banner .hero-sub { margin-left: auto; margin-right: auto; padding: 0 24px; }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
