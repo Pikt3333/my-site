@@ -732,4 +732,10 @@ p:last-child { margin-bottom: 0; }
   .mobile-bar a   { padding: 14px; font-size: 0.9rem; }
   h2 { font-size: 1.4rem; }
 }
-</style>
+
+/* 2026-11-20: SEO headline subtitle, footer service links, linked tags */
+.hero h1 .h1-sub { display: block; font-size: clamp(1.05rem, 2.6vw, 1.6rem); font-weight: 600; color: var(--white); margin-top: .5rem; letter-spacing: .2px; }
+.site-footer .footer-services a { white-space: nowrap; }
+a.tag { text-decoration: none; }
+a.tag:hover { filter: brightness(0.95); }
+.about-section a, .faq-answer a { color: var(--navy); font-weight: 600; }
